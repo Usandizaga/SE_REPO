@@ -1,0 +1,48 @@
+name: CI Pipeline
+
+# Define en qué eventos se ejecutará el workflow
+on:
+  push:
+    branches:
+      - main  # O cualquier rama principal que estés utilizando
+  pull_request:
+    branches:
+      - main  # O cualquier rama principal que estés utilizando
+
+jobs:
+  test:
+    runs-on: windows-latest  # Cambié de ubuntu-latest a windows-latest para usar Windows
+
+    steps:
+      # Checkout del código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Configuración de Node.js en Windows (si usas Node.js en tu proyecto)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Cambia esto por la versión que estás utilizando
+
+      # Instalación de dependencias
+      - name: Install dependencies
+        run: npm install  # o `yarn install` si usas Yarn
+
+      # Ejecutar los tests
+      - name: Run tests
+        run: npm test  # o el comando correspondiente a tus tests, como `yarn test`
+
+      # Si los tests fallan, GitHub Actions marcará el paso como fallido,
+      # lo que evitará que el push se haga.
+      
+  # Opcionalmente, puedes agregar un paso para desplegar después de los tests si lo necesitas
+  deploy:
+    needs: test
+    runs-on: windows-latest  # También en Windows para el despliegue
+    if: success()  # Solo se ejecuta si los tests pasaron
+
+    steps:
+      - name: Deploy to production
+        run: |
+          # Comandos para hacer el deploy a producción
+          echo "Deploying application..."
