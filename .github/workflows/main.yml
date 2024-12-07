@@ -1,48 +1,51 @@
 name: CI Pipeline
 
-# Define en qué eventos se ejecutará el workflow
+# Definir en qué eventos se ejecutará el workflow
 on:
   push:
     branches:
-      - main  # O cualquier rama principal que estés utilizando
+      - main  # Ramas donde se ejecuta en cada push
+      - dev   # Opcionalmente, agrega otras ramas relevantes
   pull_request:
     branches:
-      - main  # O cualquier rama principal que estés utilizando
+      - main
 
 jobs:
   test:
-    runs-on: windows-latest  # Cambié de ubuntu-latest a windows-latest para usar Windows
+    runs-on: windows-latest  # Usar Windows
 
     steps:
       # Checkout del código
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Configuración de Node.js en Windows (si usas Node.js en tu proyecto)
+      # Configuración de Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Cambia esto por la versión que estás utilizando
+          node-version: '16'  # Cambia según tu versión de Node.js
+          cache: 'npm'        # Habilitar caché para las dependencias
 
       # Instalación de dependencias
       - name: Install dependencies
-        run: npm install  # o `yarn install` si usas Yarn
+        run: npm ci  # `ci` es preferible en entornos de CI
 
       # Ejecutar los tests
       - name: Run tests
-        run: npm test  # o el comando correspondiente a tus tests, como `yarn test`
+        run: npm test
 
-      # Si los tests fallan, GitHub Actions marcará el paso como fallido,
-      # lo que evitará que el push se haga.
-      
-  # Opcionalmente, puedes agregar un paso para desplegar después de los tests si lo necesitas
+      # Publicar resultados de los tests (opcional)
+      - name: Upload test results
+        if: failure()  # Solo si los tests fallan
+        run: echo "Almacenar resultados o enviar notificación sobre el error"
+
+  # Desplegar solo si los tests pasan, si se requiere
+  # Puedes eliminar este bloque si no lo necesitas por ahora
   deploy:
     needs: test
-    runs-on: windows-latest  # También en Windows para el despliegue
-    if: success()  # Solo se ejecuta si los tests pasaron
+    runs-on: windows-latest
+    if: success()  # Solo si los tests pasan
 
     steps:
-      - name: Deploy to production
-        run: |
-          # Comandos para hacer el deploy a producción
-          echo "Deploying application..."
+      - name: Deploy application
+        run: echo "Desplegando aplicación..."
