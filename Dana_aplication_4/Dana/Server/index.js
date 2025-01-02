@@ -18,16 +18,16 @@ mongoose
 
 // Esquema y modelo de MongoDB
 const formularioSchema = new mongoose.Schema({
-  tipoAyuda: String,
-  cantidad: Number,
-  respuestas: Object, // Guardará las preguntas y respuestas del cuestionario
+  tipoAyuda: { type: String, required: true },
+  cantidad: { type: Number, required: true },
+  respuestas: { type: Object, required: true }, // Guardará las preguntas y respuestas del cuestionario
 });
 
 const Formulario = mongoose.model('Formulario', formularioSchema);
 
 // Ruta para manejar solicitudes POST
 app.post('/api/formulario', async (req, res) => {
-    console.log('Datos recibidos:', req.body); // Muestra los datos recibidos en la consola
+  console.log('Datos recibidos:', req.body); // Muestra los datos recibidos en la consola
 
   try {
     const nuevoFormulario = new Formulario(req.body);
@@ -39,7 +39,12 @@ app.post('/api/formulario', async (req, res) => {
   }
 });
 
-// Iniciar el servidor
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+// Solo iniciar el servidor si NO estamos en entorno de pruebas
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+  });
+}
+
+// Exportar la app para las pruebas
+module.exports = app;
