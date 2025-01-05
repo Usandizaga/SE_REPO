@@ -5,6 +5,7 @@ import Header from './Header';
 import Home from './Home';
 import Footer from './Footer';
 import Donar from './Donar';
+import Comentarios from './Comentarios';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
      <Home/>
      <Donar />
      <Footer/>
+     <Comentarios/>
   </>
 
   );

@@ -28,10 +28,11 @@ const Home = () => {
 
   const [formData, setFormData] = useState({
     tipoAyuda: '',
-    cantidad: '' // Añadir 'cantidad' al estado
+    cantidad: '', // Añadir 'cantidad' al estado
+    ubicacion: '' // Añadir 'ubicación' al estado
   });
 
-  // Función para manejar el cambio en tipo de ayuda y cantidad
+  // Función para manejar el cambio en tipo de ayuda, cantidad y ubicación
   const handleChange2 = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -48,7 +49,7 @@ const Home = () => {
       tipoAyuda: formData.tipoAyuda,
       cantidad: parseInt(formData.cantidad), // Aseguramos que sea un número
       respuestas, // Incluye las respuestas del cuestionario
-      
+      ubicacion: formData.ubicacion, // Incluir la ubicación en los datos
     };
   
     try {
@@ -116,6 +117,20 @@ const Home = () => {
             />
           </label>
           <br />
+
+          {/* Campo para ingresar la ubicación */}
+          <label>
+            Ubicación:
+            <input
+              type="text"
+              name="ubicacion"
+              value={formData.ubicacion}
+              onChange={handleChange2}
+              required
+            />
+          </label>
+          <br />
+
           <button type="submit">Enviar</button>
         </form>
       </div>

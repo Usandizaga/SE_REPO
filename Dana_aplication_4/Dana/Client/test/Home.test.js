@@ -1,56 +1,47 @@
-const express = require('express');
+
+const request = require('supertest');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const app = require('C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Server/index.js'); // Ruta al archivo de tu servidor
 
-const app = express();
-const PORT = 5001; // Cambia el puerto si es necesario
-
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
-
-// Conexión a MongoDB
-mongoose
-  .connect('mongodb://127.0.0.1:27017/ayudaDB', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Conectado a MongoDB'))
-  .catch((err) => console.error('Error al conectar a MongoDB:', err));
-
-// Esquema y modelo de MongoDB
-const formularioSchema = new mongoose.Schema({
-  tipoAyuda: { type: String, required: true },
-  cantidad: { type: Number, required: true },
-  respuestas: { type: Object, required: true }, // Guardará las preguntas y respuestas del cuestionario
+beforeAll(async () => {
+  const mongoUri = 'mongodb://127.0.0.1:27017/testDB';
+  await mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
 });
 
-const Formulario = mongoose.model('Formulario', formularioSchema);
-
-// Ruta para manejar solicitudes POST
-app.post('/api/formulario', async (req, res) => {
-  console.log('Datos recibidos:', req.body); // Muestra los datos recibidos en la consola
-
-  // Validación: Verificar si faltan datos
-  const { tipoAyuda, cantidad, respuestas } = req.body;
-  if (!tipoAyuda || !cantidad || Object.keys(respuestas).length === 0) {
-    return res.status(400).json({ mensaje: 'Faltan datos requeridos' });
-  }
-
-  try {
-    const nuevoFormulario = new Formulario(req.body);
-    const resultado = await nuevoFormulario.save();
-    res.status(201).json({ mensaje: 'Formulario guardado exitosamente', resultado });
-  } catch (error) {
-    console.error('Error al guardar el formulario:', error);
-    res.status(500).json({ mensaje: 'Error al guardar el formulario' });
-  }
+afterAll(async () => {
+  await mongoose.connection.close();
 });
 
-// Solo iniciar el servidor si NO estamos en entorno de pruebas
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+describe('API /api/formulario', () => {
+  it('debería guardar un formulario exitosamente', async () => {
+    const datosFormulario = {
+      tipoAyuda: 'Comida',
+      cantidad: 5,
+      respuestas: { pregunta1: 'respuesta1', pregunta2: 'respuesta2' },
+    };
+
+    const response = await request(app)
+      .post('/api/formulario')
+      .send(datosFormulario)
+      .expect('Content-Type', /json/)
+      .expect(201);
+
+    expect(response.body.mensaje).toBe('Formulario guardado exitosamente');
+    expect(response.body.resultado).toHaveProperty('_id');
   });
-}
 
-// Exportar la app para las pruebas
-module.exports = app;
+  it('debería retornar un error si faltan datos requeridos', async () => {
+    const datosFormularioIncompletos = {
+      tipoAyuda: 'Comida',
+      cantidad: 5,
+    };
+
+    const response = await request(app)
+      .post('/api/formulario')
+      .send(datosFormularioIncompletos)
+      .expect('Content-Type', /json/)
+      .expect(400);
+
+    expect(response.body.mensaje).toBe('Faltan datos requeridos');
+  });
+});
