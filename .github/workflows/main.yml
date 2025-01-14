@@ -32,7 +32,7 @@ jobs:
 
       # Ejecutar los tests
       - name: Run tests
-        run: npm run test -- --testPathPattern=test/  # Apunta al directorio de tests si es necesario
+        run: npm run test -- --testPathPattern=Dana_aplication_4/Dana/Client/test/ # Apunta al directorio de tests si es necesario
 
       # Publicar resultados de los tests (opcional)
       - name: Upload test results
