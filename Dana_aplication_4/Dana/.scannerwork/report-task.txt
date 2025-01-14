@@ -1,0 +1,6 @@
+projectKey=Se_repo
+serverUrl=http://localhost:9000
+serverVersion=10.7.0.96327
+dashboardUrl=http://localhost:9000/dashboard?id=Se_repo
+ceTaskId=400a332a-adb7-46ff-9727-20373afc2cd8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=400a332a-adb7-46ff-9727-20373afc2cd8
