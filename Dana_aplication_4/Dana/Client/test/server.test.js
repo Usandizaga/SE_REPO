@@ -19,9 +19,15 @@ afterAll(async () => {
 describe('POST /api/formulario', () => {
   it('debería guardar un formulario y devolver un mensaje de éxito', async () => {
     const data = {
-      tipoAyuda: 'alimentos',
-      cantidad: 3,
-      respuestas: { 1: 'Comida', 2: 'Urgente', 3: '5 personas', 4: 'No' },
+      tipoAyuda: 'alimentos', // Asegúrate de que tipoAyuda no esté vacío
+      cantidad: 3, // Asegúrate de que cantidad no esté vacío
+      respuestas: { 
+        '1': 'Comida', 
+        '2': 'Urgente', 
+        '3': '5 personas', 
+        '4': 'No' 
+      },
+      ubicacion: 'Andoain' // Añadir el campo 'ubicacion' que es obligatorio
     };
 
     // Hacer la petición POST
@@ -35,16 +41,17 @@ describe('POST /api/formulario', () => {
 
   it('debería devolver un error si faltan datos requeridos', async () => {
     const data = {
-      tipoAyuda: '',
-      cantidad: '',
-      respuestas: {},
+      tipoAyuda: '', // tipoAyuda vacío, debería ser un campo requerido
+      cantidad: '', // cantidad vacía, debería ser un campo requerido
+      respuestas: {}, // respuestas vacías, puede no ser obligatorio dependiendo del esquema
+      ubicacion: '' // ubicación vacía, debería ser un campo requerido
     };
 
     // Hacer la petición con datos incompletos
     const response = await request(app).post('/api/formulario').send(data);
 
     // Verificar el resultado
-    expect(response.status).toBe(500); // Ajusta según la validación en tu controlador
-    expect(response.body.mensaje).toBe('Error al guardar el formulario');
+    expect(response.status).toBe(400); // Ajusta según la validación en tu controlador
+    expect(response.body.mensaje).toBe('Faltan datos requeridos');
   });
 });

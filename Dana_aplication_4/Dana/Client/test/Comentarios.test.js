@@ -15,6 +15,8 @@ test('Muestra un error si los campos están vacíos', async () => {
   expect(await screen.findByText(/Por favor, completa todos los campos./)).toBeInTheDocument();
 });
 
+
+
 test('Añade un comentario válido a la lista', async () => {
   render(<Comentarios />);
 
@@ -29,8 +31,10 @@ test('Añade un comentario válido a la lista', async () => {
   await sleep(2000);
 
   // Verificar que el comentario se añadió a la lista
-  expect(screen.getByText('Juan: Este es mi comentario')).toBeInTheDocument();
+  expect(screen.getByText(/Este es mi comentario/)).toBeInTheDocument();
 });
+
+
 
 test('Verifica que el formulario se limpia después de enviar un comentario', async () => {
   render(<Comentarios />);

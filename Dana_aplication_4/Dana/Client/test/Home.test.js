@@ -1,4 +1,3 @@
-
 const request = require('supertest');
 const mongoose = require('mongoose');
 const app = require('C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Server/index.js'); // Ruta al archivo de tu servidor
@@ -17,6 +16,7 @@ describe('API /api/formulario', () => {
     const datosFormulario = {
       tipoAyuda: 'Comida',
       cantidad: 5,
+      ubicacion: 'Lugar de prueba', // Asegúrate de incluir el campo 'ubicacion'
       respuestas: { pregunta1: 'respuesta1', pregunta2: 'respuesta2' },
     };
 
@@ -34,6 +34,7 @@ describe('API /api/formulario', () => {
     const datosFormularioIncompletos = {
       tipoAyuda: 'Comida',
       cantidad: 5,
+      // Falta el campo 'ubicacion', que es obligatorio
     };
 
     const response = await request(app)

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\validarFormulario.test.js">
+        <testCase name="validarFormulario debería devolver errores si los campos están vacíos" duration="8"/>
+        <testCase name="validarFormulario debería devolver un error si el email no es válido" duration="1"/>
+        <testCase name="validarFormulario debería devolver un objeto vacío si todos los campos son válidos" duration="0"/>
+    </file>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js">
+        <testCase name="debería limpiar los errores al ingresar datos válidos" duration="8">
+            <failure message="ReferenceError: document is not defined"><![CDATA[ReferenceError: document is not defined
+    at render (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\@testing-library\react\dist\pure.js:239:5)
+    at _callee$ (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:6:9)
+    at call (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:2:1)
+    at Generator.tryCatch (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:2:1)
+    at Generator._invoke [as next] (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:2:1)
+    at _next (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:2:1)
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js:2:1)
+    at Promise.then.completed (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+        </testCase>
+    </file>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js">
+        <testCase name="Muestra un error si los campos están vacíos" duration="6">
+            <failure message="ReferenceError: document is not defined"><![CDATA[ReferenceError: document is not defined
+    at render (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\@testing-library\react\dist\pure.js:239:5)
+    at _callee$ (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:9:9)
+    at call (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator.tryCatch (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator._invoke [as next] (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at _next (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Promise.then.completed (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+        </testCase>
+        <testCase name="Añade un comentario válido a la lista" duration="1">
+            <failure message="ReferenceError: document is not defined"><![CDATA[ReferenceError: document is not defined
+    at render (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\@testing-library\react\dist\pure.js:239:5)
+    at _callee2$ (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:21:9)
+    at call (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator.tryCatch (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator._invoke [as next] (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at _next (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Promise.then.completed (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+        </testCase>
+        <testCase name="Verifica que el formulario se limpia después de enviar un comentario" duration="1">
+            <failure message="ReferenceError: document is not defined"><![CDATA[ReferenceError: document is not defined
+    at render (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\@testing-library\react\dist\pure.js:239:5)
+    at _callee3$ (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:40:9)
+    at call (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator.tryCatch (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator._invoke [as next] (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at _next (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Promise.then.completed (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+        </testCase>
+        <testCase name="Verifica que no se añade un comentario vacío" duration="1">
+            <failure message="ReferenceError: document is not defined"><![CDATA[ReferenceError: document is not defined
+    at render (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\@testing-library\react\dist\pure.js:239:5)
+    at _callee4$ (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:55:9)
+    at call (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator.tryCatch (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Generator._invoke [as next] (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at asyncGeneratorStep (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at _next (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at new Promise (<anonymous>)
+    at Object.<anonymous> (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js:2:1)
+    at Promise.then.completed (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\utils.js:231:10)
+    at _callCircusTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at _runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:252:3)
+    at _runTestsForDescribeBlock (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:126:9)
+    at run (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\run.js:71:3)
+    at runAndTransformResultsToJestFormat (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:122:21)
+    at jestAdapter (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:19)
+    at runTestInternal (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:367:16)
+    at runTest (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\runTest.js:444:34)
+    at Object.worker (C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\node_modules\jest-runner\build\testWorker.js:106:12)]]></failure>
+        </testCase>
+    </file>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Home.test.js">
+        <testCase name="API /api/formulario debería guardar un formulario exitosamente" duration="61"/>
+        <testCase name="API /api/formulario debería retornar un error si faltan datos requeridos" duration="5"/>
+    </file>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\server.test.js">
+        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="62"/>
+        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="7"/>
+    </file>
+</testExecutions>

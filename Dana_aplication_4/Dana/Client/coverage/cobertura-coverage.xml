@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage lines-valid="54" lines-covered="12" line-rate="0.22219999999999998" branches-valid="36" branches-covered="14" branch-rate="0.38880000000000003" timestamp="1736770759188" complexity="0" version="0.1">
+  <sources>
+    <source>C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client</source>
+  </sources>
+  <packages>
+    <package name="main" line-rate="0.22219999999999998" branch-rate="0.38880000000000003">
+      <classes>
+        <class name="Comentarios.jsx" filename="src\Comentarios.jsx" line-rate="0" branch-rate="0">
+          <methods>
+            <method name="Comentarios" hits="0" signature="()V">
+              <lines>
+                <line number="3" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_1)" hits="0" signature="()V">
+              <lines>
+                <line number="8" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_2)" hits="0" signature="()V">
+              <lines>
+                <line number="10" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_3)" hits="0" signature="()V">
+              <lines>
+                <line number="16" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_4)" hits="0" signature="()V">
+              <lines>
+                <line number="25" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_5)" hits="0" signature="()V">
+              <lines>
+                <line number="33" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_6)" hits="0" signature="()V">
+              <lines>
+                <line number="67" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="false"/>
+            <line number="5" hits="0" branch="false"/>
+            <line number="6" hits="0" branch="false"/>
+            <line number="8" hits="0" branch="false"/>
+            <line number="9" hits="0" branch="false"/>
+            <line number="10" hits="0" branch="false"/>
+            <line number="16" hits="0" branch="false"/>
+            <line number="17" hits="0" branch="false"/>
+            <line number="20" hits="0" branch="true" condition-coverage="0% (0/4)"/>
+            <line number="21" hits="0" branch="false"/>
+            <line number="22" hits="0" branch="false"/>
+            <line number="25" hits="0" branch="false"/>
+            <line number="29" hits="0" branch="false"/>
+            <line number="30" hits="0" branch="false"/>
+            <line number="33" hits="0" branch="false"/>
+            <line number="34" hits="0" branch="true" condition-coverage="0% (0/2)"/>
+            <line number="35" hits="0" branch="false"/>
+            <line number="39" hits="0" branch="false"/>
+            <line number="68" hits="0" branch="false"/>
+          </lines>
+        </class>
+        <class name="Donar.jsx" filename="src\Donar.jsx" line-rate="0.3428" branch-rate="0.5">
+          <methods>
+            <method name="(anonymous_0)" hits="3" signature="()V">
+              <lines>
+                <line number="3" hits="3"/>
+              </lines>
+            </method>
+            <method name="Donar" hits="0" signature="()V">
+              <lines>
+                <line number="20" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_2)" hits="0" signature="()V">
+              <lines>
+                <line number="32" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_3)" hits="0" signature="()V">
+              <lines>
+                <line number="34" hits="0"/>
+              </lines>
+            </method>
+            <method name="(anonymous_4)" hits="0" signature="()V">
+              <lines>
+                <line number="40" hits="0"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="3" hits="2" branch="false"/>
+            <line number="4" hits="3" branch="false"/>
+            <line number="6" hits="3" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="7" hits="3" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="8" hits="1" branch="false"/>
+            <line number="9" hits="2" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="10" hits="1" branch="false"/>
+            <line number="12" hits="3" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="13" hits="3" branch="true" condition-coverage="100% (4/4)"/>
+            <line number="14" hits="1" branch="false"/>
+            <line number="15" hits="3" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="17" hits="3" branch="false"/>
+            <line number="21" hits="0" branch="false"/>
+            <line number="30" hits="0" branch="false"/>
+            <line number="32" hits="0" branch="false"/>
+            <line number="33" hits="0" branch="false"/>
+            <line number="34" hits="0" branch="false"/>
+            <line number="40" hits="0" branch="false"/>
+            <line number="41" hits="0" branch="false"/>
+            <line number="42" hits="0" branch="false"/>
+            <line number="44" hits="0" branch="true" condition-coverage="0% (0/2)"/>
+            <line number="45" hits="0" branch="false"/>
+            <line number="46" hits="0" branch="false"/>
+            <line number="49" hits="0" branch="false"/>
+            <line number="51" hits="0" branch="false"/>
+            <line number="57" hits="0" branch="true" condition-coverage="0% (0/2)"/>
+            <line number="58" hits="0" branch="false"/>
+            <line number="61" hits="0" branch="false"/>
+            <line number="62" hits="0" branch="false"/>
+            <line number="65" hits="0" branch="false"/>
+            <line number="68" hits="0" branch="false"/>
+            <line number="76" hits="0" branch="false"/>
+            <line number="78" hits="0" branch="false"/>
+            <line number="79" hits="0" branch="false"/>
+            <line number="83" hits="0" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
