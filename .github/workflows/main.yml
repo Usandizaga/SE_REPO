@@ -18,36 +18,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Configuración de Node.js para el frontend
-      - name: Set up Node.js for Client
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          cache: 'npm'
+      # Imprimir el directorio de trabajo actual (debug)
+      - name: Print working directory
+        run: pwd
 
       # Instalar dependencias del frontend
       - name: Install frontend dependencies
-        working-directory: Dana_aplication_4/Dana/Client/
+        working-directory: Dana_aplication_4/Dana/Client
         run: npm ci
 
-      # Ejecutar tests del frontend
+      # Ejecutar pruebas del frontend
       - name: Run frontend tests
-        working-directory: Dana_aplication_4/Dana/Client/
+        working-directory: Dana_aplication_4/Dana/Client
         run: npm test
-
-      # Configuración de Node.js para el backend
-      - name: Set up Node.js for Server
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          cache: 'npm'
 
       # Instalar dependencias del backend
       - name: Install backend dependencies
-        working-directory: Dana_aplication_4/Dana/Server/
+        working-directory: Dana_aplication_4/Dana/Server
         run: npm ci
 
-      # Ejecutar tests del backend
+      # Ejecutar pruebas del backend
       - name: Run backend tests
-        working-directory: Dana_aplication_4/Dana/Server/
+        working-directory: Dana_aplication_4/Dana/Server
         run: npm test
