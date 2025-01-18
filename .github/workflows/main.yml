@@ -30,7 +30,7 @@ jobs:
       # Ejecutar pruebas del frontend
       - name: Run frontend tests
         working-directory: Dana_aplication_4/Dana/Client
-        run: npm test
+        run: npm run test
 
       # Instalar dependencias del backend
       - name: Install backend dependencies
@@ -40,4 +40,4 @@ jobs:
       # Ejecutar pruebas del backend
       - name: Run backend tests
         working-directory: Dana_aplication_4/Dana/Server
-        run: npm test
+        run: npm run test
