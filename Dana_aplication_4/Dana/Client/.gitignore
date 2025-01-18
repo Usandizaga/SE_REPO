@@ -28,5 +28,3 @@ coverage/
 *.html
 .scannerwork/
 
-# Ignorar node_modules
-node_modules/
