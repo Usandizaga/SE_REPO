@@ -1,0 +1,51 @@
+name: CI Pipeline
+
+# Definir en qué eventos se ejecutará el workflow
+on:
+  push:
+    branches:
+      - main  # Ramas donde se ejecuta en cada push
+      - dev   # Opcionalmente, agrega otras ramas relevantes
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: windows-latest  # Usar Windows
+
+    steps:
+      # Checkout del código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Configuración de Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Cambia según tu versión de Node.js
+          cache: 'npm'        # Habilitar caché para las dependencias
+
+      # Instalación de dependencias
+      - name: Install dependencies
+        run: npm ci  # `ci` es preferible en entornos de CI
+
+      # Ejecutar los tests
+      - name: Run tests
+        run: npm test
+
+      # Publicar resultados de los tests (opcional)
+      - name: Upload test results
+        if: failure()  # Solo si los tests fallan
+        run: echo "Almacenar resultados o enviar notificación sobre el error"
+
+  # Desplegar solo si los tests pasan, si se requiere
+  # Puedes eliminar este bloque si no lo necesitas por ahora
+  deploy:
+    needs: test
+    runs-on: windows-latest
+    if: success()  # Solo si los tests pasan
+
+    steps:
+      - name: Deploy application
+        run: echo "Desplegando aplicación..."
