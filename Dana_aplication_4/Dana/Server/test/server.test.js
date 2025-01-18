@@ -1,6 +1,6 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
-const app = require('C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Server/src/index.js'); // Asegúrate de importar solo la app sin la llamada a `listen`
+const app = require('../src/index.js'); // Asegúrate de importar solo la app sin la llamada a `listen`
 
 beforeAll(async () => {
   // Conectar a una base de datos de prueba

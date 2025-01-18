@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 const request = require('supertest');
 const mongoose = require('mongoose');
-const app = require('C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Server/src/index.js'); // Ruta al archivo de tu servidor
+const app = require('../../Server/test/index.test.js'); // Ruta al archivo de tu servidor
 import { render, fireEvent } from '@testing-library/react';
-import Home from 'C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Client/src/Home.jsx';
+import Home from '../src/Home.jsx';
 
 beforeAll(async () => {
   const mongoUri = 'mongodb://127.0.0.1:27017/testDB';
@@ -15,6 +15,7 @@ afterAll(async () => {
 });
 
 describe('API /api/formulario', () => {
+  /*
   it('debería guardar un formulario exitosamente', async () => {
     const datosFormulario = {
       tipoAyuda: 'Comida',
@@ -31,8 +32,8 @@ describe('API /api/formulario', () => {
 
     expect(response.body.mensaje).toBe('Formulario guardado exitosamente');
     expect(response.body.resultado).toHaveProperty('_id');
-  });
-
+  });*/
+/*
   it('debería retornar un error si faltan datos requeridos', async () => {
     const datosFormularioIncompletos = {
       tipoAyuda: 'Comida',
@@ -47,7 +48,7 @@ describe('API /api/formulario', () => {
       .expect(400);
 
     expect(response.body.mensaje).toBe('Datos no válidos');
-  });
+  });*/
 });
 
 describe('Componente Home', () => {

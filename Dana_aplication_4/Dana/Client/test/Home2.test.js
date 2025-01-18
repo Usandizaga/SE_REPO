@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Home from 'C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Client/src/Home.jsx';
+import Home from '../src/Home.jsx';
 import fetchMock from 'jest-fetch-mock';
 import { waitFor } from '@testing-library/react';
 

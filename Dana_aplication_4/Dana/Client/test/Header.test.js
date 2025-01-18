@@ -1,7 +1,7 @@
 // Header.test.js
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Header from 'C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Client/src/Header.jsx';  // Asegúrate de ajustar la ruta si es necesario
+import Header from '../src/Header.jsx';  // Asegúrate de ajustar la ruta si es necesario
 
 describe('Header', () => {
   test('debería renderizar la imagen con el src y alt correctos', () => {

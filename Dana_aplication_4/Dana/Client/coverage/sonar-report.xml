@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\donacionRoutes.test.js">
-    </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\validarFormulario.test.js">
-        <testCase name="validarFormulario debería devolver errores si los campos están vacíos" duration="16"/>
+        <testCase name="validarFormulario debería devolver errores si los campos están vacíos" duration="13"/>
         <testCase name="validarFormulario debería devolver un error si el email no es válido" duration="1"/>
         <testCase name="validarFormulario debería devolver un objeto vacío si todos los campos son válidos" duration="0"/>
     </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Footer.test.js">
-        <testCase name="Footer debería mostrar el texto de derechos reservados" duration="85"/>
-    </file>
-    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Header.test.js">
-        <testCase name="Header debería renderizar la imagen con el src y alt correctos" duration="126"/>
-        <testCase name="Header debería renderizar el título correctamente" duration="29"/>
+        <testCase name="Footer debería mostrar el texto de derechos reservados" duration="45"/>
     </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Cuestionario.test.js">
-        <testCase name="Cuestionario debería mostrar la pregunta y permitir al usuario escribir una respuesta" duration="75"/>
+        <testCase name="Cuestionario debería mostrar la pregunta y permitir al usuario escribir una respuesta" duration="69"/>
+    </file>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Header.test.js">
+        <testCase name="Header debería renderizar la imagen con el src y alt correctos" duration="116"/>
+        <testCase name="Header debería renderizar el título correctamente" duration="16"/>
     </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\main.test.js">
-        <testCase name="Main debe renderizar la aplicación correctamente" duration="63"/>
-    </file>
-    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js">
-        <testCase name="debería mostrar un mensaje de error si la solicitud de envío falla" duration="249"/>
-        <testCase name="debería limpiar los errores al ingresar datos válidos" duration="67"/>
-        <testCase name="debería mostrar errores de validación si faltan campos obligatorios" duration="20"/>
-        <testCase name="debería limpiar los errores cuando se corrigen los campos" duration="20"/>
+        <testCase name="Main debe renderizar la aplicación correctamente" duration="103"/>
     </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\App.test.js">
-        <testCase name="debería renderizar los componentes correctamente" duration="67"/>
+        <testCase name="debería renderizar los componentes correctamente" duration="115"/>
     </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Home2.test.js">
-        <testCase name="debería enviar el formulario correctamente" duration="208"/>
-        <testCase name="debería mostrar un error si el formulario no se envía correctamente" duration="22"/>
+        <testCase name="debería enviar el formulario correctamente" duration="277"/>
+        <testCase name="debería mostrar un error si el formulario no se envía correctamente" duration="31"/>
     </file>
-    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js">
-        <testCase name="Muestra un error si los campos están vacíos" duration="188"/>
-        <testCase name="Añade un comentario válido a la lista" duration="2039"/>
-        <testCase name="Verifica que el formulario se limpia después de enviar un comentario" duration="8"/>
-        <testCase name="Verifica que no se añade un comentario vacío" duration="5"/>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Donar.test.js">
+        <testCase name="debería mostrar un mensaje de error si la solicitud de envío falla" duration="271"/>
+        <testCase name="debería limpiar los errores al ingresar datos válidos" duration="37"/>
+        <testCase name="debería mostrar errores de validación si faltan campos obligatorios" duration="16"/>
+        <testCase name="debería limpiar los errores cuando se corrigen los campos" duration="14"/>
     </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Home.test.js">
-        <testCase name="API /api/formulario debería guardar un formulario exitosamente" duration="73"/>
-        <testCase name="API /api/formulario debería retornar un error si faltan datos requeridos" duration="7"/>
-        <testCase name="Componente Home debería actualizar las respuestas cuando se cambia una entrada" duration="45"/>
+        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="52"/>
+        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="8"/>
+        <testCase name="POST /api/formulario debería manejar errores de base de datos" duration="25"/>
+        <testCase name="POST /api/donacion debería guardar una donación correctamente" duration="11"/>
+        <testCase name="POST /api/donacion debería devolver un error 500 si falla al guardar la donación" duration="11"/>
+        <testCase name="Componente Home debería actualizar las respuestas cuando se cambia una entrada" duration="40"/>
         <testCase name="Componente Home debería manejar errores de conexión al enviar el formulario" duration="42"/>
         <testCase name="Componente Home debería llamar a handleChange cuando se cambia una respuesta en el cuestionario" duration="7"/>
+    </file>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client\test\Comentarios.test.js">
+        <testCase name="Muestra un error si los campos están vacíos" duration="162"/>
+        <testCase name="Añade un comentario válido a la lista" duration="2032"/>
+        <testCase name="Verifica que el formulario se limpia después de enviar un comentario" duration="8"/>
+        <testCase name="Verifica que no se añade un comentario vacío" duration="4"/>
     </file>
 </testExecutions>

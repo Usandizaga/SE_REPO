@@ -1,6 +1,6 @@
 import React from 'react';  // Añade esta línea
 import { render, screen, fireEvent } from '@testing-library/react';
-import Cuestionario from 'C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Client/src/Cuestionario.jsx';
+import Cuestionario from '../src/Cuestionario.jsx';
 
 describe('Cuestionario', () => {
   test('debería mostrar la pregunta y permitir al usuario escribir una respuesta', () => {

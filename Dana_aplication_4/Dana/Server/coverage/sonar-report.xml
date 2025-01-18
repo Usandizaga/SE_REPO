@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server\test\server.test.js">
-        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="67"/>
-        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="10"/>
+        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="71"/>
+        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="8"/>
     </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server\test\index.test.js">
-        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="66"/>
-        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="6"/>
-        <testCase name="POST /api/formulario debería manejar errores de base de datos" duration="33"/>
-        <testCase name="POST /api/donacion debería guardar una donación correctamente" duration="37"/>
-        <testCase name="POST /api/donacion debería devolver un error 500 si falla al guardar la donación" duration="18"/>
+        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="72"/>
+        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="10"/>
+        <testCase name="POST /api/formulario debería manejar errores de base de datos" duration="31"/>
+        <testCase name="POST /api/donacion debería guardar una donación correctamente" duration="25"/>
+        <testCase name="POST /api/donacion debería devolver un error 500 si falla al guardar la donación" duration="14"/>
     </file>
 </testExecutions>

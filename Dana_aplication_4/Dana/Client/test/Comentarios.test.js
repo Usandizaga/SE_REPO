@@ -1,6 +1,6 @@
 import React from 'react'; // Asegúrate de importar React si es necesario
 import { render, screen, fireEvent } from '@testing-library/react';
-import Comentarios from 'C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Client/src/Comentarios.jsx'; // Asegúrate de que la ruta es correcta
+import Comentarios from '../src/Comentarios.jsx'; // Asegúrate de que la ruta es correcta
 
 // Definir la función sleep
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));

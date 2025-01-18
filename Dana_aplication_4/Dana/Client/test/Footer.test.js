@@ -1,7 +1,7 @@
 // Footer.test.js
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Footer from 'C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Client/src/Footer.jsx';  // Asegúrate de ajustar la ruta si es necesario
+import Footer from '../src/Footer.jsx';  // Asegúrate de ajustar la ruta si es necesario
 
 describe('Footer', () => {
   test('debería mostrar el texto de derechos reservados', () => {

@@ -1,6 +1,6 @@
 import React from 'react';  // Agrega esto si aún no está
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import FormularioDonacion from 'C:/Users/andon/OneDrive/Desktop/se_repo/Dana_aplication_4/Dana/Client/src/Donar.jsx'; // Cambia esto al nombre de tu componente
+import FormularioDonacion from '../src/Donar.jsx'; // Cambia esto al nombre de tu componente
 
 beforeAll(() => {
   // Mock de window.alert para evitar que se muestre una ventana emergente durante las pruebas
