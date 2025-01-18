@@ -27,12 +27,12 @@ jobs:
 
       # Instalar dependencias del frontend
       - name: Install frontend dependencies
-        working-directory: Dana_aplication_4/Dana/Client
+        working-directory: Dana_aplication_4/Dana/Client/
         run: npm ci
 
       # Ejecutar tests del frontend
       - name: Run frontend tests
-        working-directory: Dana_aplication_4/Dana/Client
+        working-directory: Dana_aplication_4/Dana/Client/
         run: npm test
 
       # Configuración de Node.js para el backend
@@ -44,10 +44,10 @@ jobs:
 
       # Instalar dependencias del backend
       - name: Install backend dependencies
-        working-directory: Dana_aplication_4/Dana/Server
+        working-directory: Dana_aplication_4/Dana/Server/
         run: npm ci
 
       # Ejecutar tests del backend
       - name: Run backend tests
-        working-directory: Dana_aplication_4/Dana/Server
+        working-directory: Dana_aplication_4/Dana/Server/
         run: npm test
