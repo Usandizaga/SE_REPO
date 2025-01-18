@@ -28,3 +28,4 @@ coverage/
 *.html
 .scannerwork/
 
+echo node_modules/ >> .gitignore
