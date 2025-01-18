@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const Peticion = require('../models/Peticion');
 
 const router = express.Router();
@@ -15,3 +15,4 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+*/

@@ -6,7 +6,7 @@ export const validarFormulario = (datos) => {
   if (!datos.nombre) errores.nombre = 'El nombre es obligatorio.';
   if (!datos.email) {
     errores.email = 'El email es obligatorio.';
-  } else if (!/\S+@\S+\.\S+/.test(datos.email)) {
+  } else if (!/^(?=[a-zA-Z0-9@._-])([a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(datos.email)) {
     errores.email = 'El email no es válido.';
   }
   if (!datos.tipoAyuda) errores.tipoAyuda = 'Debes seleccionar un tipo de ayuda.';
@@ -48,7 +48,7 @@ export default function Donar() {
 
     try {
       // Enviar los datos del formulario al backend
-      const response = await fetch('/api/formulario', {
+      const response = await fetch('/api/donacion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -91,7 +91,6 @@ export default function Donar() {
           name="nombre"
           value={formData.nombre}
           onChange={handleChange}
-          required
         />
         {errores.nombre && <p className="error">{errores.nombre}</p>}
         <br />
@@ -103,7 +102,6 @@ export default function Donar() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          required
         />
         {errores.email && <p className="error">{errores.email}</p>}
         <br />
@@ -114,7 +112,6 @@ export default function Donar() {
           name="tipoAyuda"
           value={formData.tipoAyuda}
           onChange={handleChange}
-          required
         >
           <option value="">Seleccionar...</option>
           <option value="alimentos">Alimentos</option>
@@ -131,7 +128,6 @@ export default function Donar() {
           name="descripcion"
           value={formData.descripcion}
           onChange={handleChange}
-          required
         />
         <br />
         
@@ -142,7 +138,6 @@ export default function Donar() {
           name="cantidad"
           value={formData.cantidad}
           onChange={handleChange}
-          required
         />
         {errores.cantidad && <p className="error">{errores.cantidad}</p>}
         <br />
@@ -154,12 +149,12 @@ export default function Donar() {
           name="ubicacion"
           value={formData.ubicacion}
           onChange={handleChange}
-          required
+    
         />
         {errores.ubicacion && <p className="error">{errores.ubicacion}</p>}
         <br />
         
-        <button type="submit">Enviar</button>
+        <button type="submit">Enviarr</button>
       </form>
     </div>
   );

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server\test\server.test.js">
+    <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="128"/>
+    <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="9"/>
+  </file>
+  <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server\test\index.test.js">
+    <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="128"/>
+    <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="9"/>
+    <testCase name="POST /api/donacion debería guardar una donación correctamente" duration="11"/>
+  </file>
+</testExecutions>

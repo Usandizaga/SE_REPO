@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const peticionSchema = new mongoose.Schema({
-  tipoAyuda: { type: String, required: true },
+  tipoAyuda: { type: String, required: false },
   cantidadNecesaria: { type: Number, required: true },
   ubicacion: { type: String, required: true },
   descripcion: { type: String },
@@ -10,3 +10,4 @@ const peticionSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Peticion', peticionSchema);
+*/

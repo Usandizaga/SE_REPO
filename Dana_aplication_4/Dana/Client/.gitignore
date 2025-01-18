@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Ignorar reportes de cobertura
+coverage/
+*.xml
+*.html
+.scannerwork/
+
+# Ignorar node_modules
+node_modules/

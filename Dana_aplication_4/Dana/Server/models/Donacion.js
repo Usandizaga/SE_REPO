@@ -1,11 +1,18 @@
-const mongoose = require('mongoose');
+
+/*const mongoose = require('mongoose');
 
 const donacionSchema = new mongoose.Schema({
+  nombre: { type: String, required: true },
+  email: { type: String, required: true },
   tipoAyuda: { type: String, required: true },
-  cantidadDonada: { type: Number, required: true },
+  descripcion: { type: String, required: false },
+  cantidad: { type: Number, required: true, min: 1 },
   ubicacion: { type: String, required: true },
-  peticionId: { type: mongoose.Schema.Types.ObjectId, ref: 'Peticion' },
   createdAt: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model('Donacion', donacionSchema);
+// Aquí prevenimos la sobrescritura del modelo Donacion
+const Donacion = mongoose.models.Donacion || mongoose.model('Donacion', donacionSchema);
+
+module.exports = Donacion;
+*/

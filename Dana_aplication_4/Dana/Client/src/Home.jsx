@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Cuestionario from './Cuestionario';
 
 const Home = () => {
@@ -77,7 +76,6 @@ const Home = () => {
   return (
     <div>
       <h2>Bienvenido a la página de ayuda</h2>
-
       {preguntas.map((pregunta) => (
         <Cuestionario
           key={pregunta.id}
@@ -86,7 +84,6 @@ const Home = () => {
           onChange={(value) => handleChange(pregunta.id, value)}
         />
       ))}
-
       <div>
         <form onSubmit={handleSubmit}>
           <label>
@@ -95,17 +92,14 @@ const Home = () => {
               name="tipoAyuda"
               value={formData.tipoAyuda}
               onChange={handleChange2}
-              required
-            >
+              required>
               <option value="">Seleccionar...</option>
               <option value="alimentos">Alimentos</option>
               <option value="ropa">Ropa</option>
               <option value="dinero">Dinero</option>
-              <option value="voluntariado">Voluntariado</option>
             </select>
           </label>
           <br />
-
           <label>
             Cantidad:
             <input
@@ -117,8 +111,6 @@ const Home = () => {
             />
           </label>
           <br />
-
-          {/* Campo para ingresar la ubicación */}
           <label>
             Ubicación:
             <input
@@ -130,12 +122,12 @@ const Home = () => {
             />
           </label>
           <br />
-
+  
           <button type="submit">Enviar</button>
         </form>
       </div>
-
-      <h2 className='mapa'>Seleccione un punto en el mapa</h2>
+  
+      <h2 className="mapa">Seleccione un punto en el mapa</h2>
       <img src="https://www.emprenemjunts.es/fotos/68583_foto.gif" alt="Mapa de Paiporta" />
     </div>
   );

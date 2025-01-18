@@ -1,10 +1,10 @@
-const express = require('express');
-const Donacion = require('../models/Donacion');
-const Peticion = require('../models/Peticion');
+/*const express = require('express');
+const Donacion = require('../models/Donacion.js');
+const Peticion = require('../models/Peticion.js');
 
 const router = express.Router();
 
-router.post('/', async (req, res) => {
+router.post('/api/donaciones', async (req, res) => {
   const { tipoAyuda, cantidadDonada, ubicacion, peticionId } = req.body;
 
   try {
@@ -34,3 +34,4 @@ router.post('/', async (req, res) => {
 });
 
 module.exports = router;
+*/
