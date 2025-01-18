@@ -5,7 +5,7 @@ on:
   push:
     branches:
       - main  # Ramas donde se ejecuta en cada push
-      - dev   # Opcionalmente, agrega otras ramas relevantes
+      - developt   # Opcionalmente, agrega otras ramas relevantes
   pull_request:
     branches:
       - main
