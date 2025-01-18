@@ -1,43 +1,67 @@
 name: CI Pipeline
 
+# Definir en qué eventos se ejecutará el workflow
 on:
   push:
     branches:
-      - main
-      - developt
+      - main  # Ramas donde se ejecuta en cada push
+      - developt   # Opcionalmente, agrega otras ramas relevantes
   pull_request:
     branches:
       - main
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Usar Windows
 
     steps:
+      # Checkout del código
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Para instalar dependencias de Dana/Client
-      - name: Install dependencies for Client
+      # Configuración de Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Cambia según tu versión de Node.js
+          cache: 'npm'        # Habilitar caché para las dependencias
+
+      # Instalación de dependencias para el Frontend
+      - name: Install frontend dependencies
         run: |
-          cd Dana_aplication_4\Dana\Client
-          npm ci
+          cd Dana/Client
+          npm ci  # Instalar dependencias del frontend
 
-      # Para instalar dependencias de Dana/Server
-      - name: Install dependencies for Server
+      # Ejecutar los tests del Frontend
+      - name: Run frontend tests
         run: |
-          cd Dana_aplication_4\Dana\Server
-          npm ci
+          cd Dana/Client
+          npm test
 
-      - name: Run tests
-        run: npm test
+      # Instalación de dependencias para el Backend
+      - name: Install backend dependencies
+        run: |
+          cd Dana/Server
+          npm ci  # Instalar dependencias del backend
 
+      # Ejecutar los tests del Backend
+      - name: Run backend tests
+        run: |
+          cd Dana/Server
+          npm test
+
+      # Publicar resultados de los tests (opcional)
+      - name: Upload test results
+        if: failure()  # Solo si los tests fallan
+        run: echo "Almacenar resultados o enviar notificación sobre el error"
+
+  # Desplegar solo si los tests pasan, si se requiere
+  # Puedes eliminar este bloque si no lo necesitas por ahora
   deploy:
     needs: test
     runs-on: windows-latest
-    if: success()
+    if: success()  # Solo si los tests pasan
 
     steps:
       - name: Deploy application
         run: echo "Desplegando aplicación..."
-
