@@ -1,51 +1,42 @@
 name: CI Pipeline
 
-# Definir en qué eventos se ejecutará el workflow
 on:
   push:
     branches:
-      - main  # Ramas donde se ejecuta en cada push
-      - developt   # Opcionalmente, agrega otras ramas relevantes
+      - main
   pull_request:
     branches:
       - main
 
 jobs:
   test:
-    runs-on: windows-latest  # Usar Windows
+    runs-on: windows-latest
 
     steps:
-      # Checkout del código
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Configuración de Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # Cambia según tu versión de Node.js
-          cache: 'npm'        # Habilitar caché para las dependencias
+      # Para instalar dependencias de Dana/Client
+      - name: Install dependencies for Client
+        run: |
+          cd Dana_aplication_4\Dana\Client
+          npm ci
 
-      # Instalación de dependencias
-      - name: Install dependencies
-        run: npm ci  # `ci` es preferible en entornos de CI
+      # Para instalar dependencias de Dana/Server
+      - name: Install dependencies for Server
+        run: |
+          cd Dana_aplication_4\Dana\Server
+          npm ci
 
-      # Ejecutar los tests
       - name: Run tests
         run: npm test
 
-      # Publicar resultados de los tests (opcional)
-      - name: Upload test results
-        if: failure()  # Solo si los tests fallan
-        run: echo "Almacenar resultados o enviar notificación sobre el error"
-
-  # Desplegar solo si los tests pasan, si se requiere
-  # Puedes eliminar este bloque si no lo necesitas por ahora
   deploy:
     needs: test
     runs-on: windows-latest
-    if: success()  # Solo si los tests pasan
+    if: success()
 
     steps:
       - name: Deploy application
         run: echo "Desplegando aplicación..."
+
