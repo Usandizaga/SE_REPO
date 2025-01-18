@@ -29,13 +29,13 @@ jobs:
       # Instalación de dependencias para el Frontend
       - name: Install frontend dependencies
         run: |
-          cd Dana/Client
+          cd Dana_aplication_4/Dana/Client
           npm ci  # Instalar dependencias del frontend
 
       # Ejecutar los tests del Frontend
       - name: Run frontend tests
         run: |
-          cd Dana/Client
+          cd Dana_aplication_4/Dana/Client
           npm test
 
       # Instalación de dependencias para el Backend
