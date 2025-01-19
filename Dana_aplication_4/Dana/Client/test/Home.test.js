@@ -17,40 +17,7 @@ afterAll(async () => {
 });
 
 describe('API /api/formulario', () => {
-  /*
-  it('debería guardar un formulario exitosamente', async () => {
-    const datosFormulario = {
-      tipoAyuda: 'Comida',
-      cantidad: 13,
-      ubicacion: 'Lugar de prueba', // Asegúrate de incluir el campo 'ubicacion'
-      respuestas: { pregunta1: 'respuesta1', pregunta2: 'respuesta2' },
-    };
-
-    const response = await request(app)
-      .post('/api/formulario')
-      .send(datosFormulario)
-      .expect('Content-Type', /json/)
-      .expect(201);
-
-    expect(response.body.mensaje).toBe('Formulario guardado exitosamente');
-    expect(response.body.resultado).toHaveProperty('_id');
-  });*/
-/*
-  it('debería retornar un error si faltan datos requeridos', async () => {
-    const datosFormularioIncompletos = {
-      tipoAyuda: 'Comida',
-      cantidad: 5,
-      // Falta el campo 'ubicacion', que es obligatorio
-    };
-
-    const response = await request(app)
-      .post('/api/formulario')
-      .send(datosFormularioIncompletos)
-      .expect('Content-Type', /json/)
-      .expect(400);
-
-    expect(response.body.mensaje).toBe('Datos no válidos');
-  });*/
+  
 });
 
 describe('Componente Home', () => {
