@@ -5,11 +5,10 @@ const app = require('../../Server/test/index.test.js'); // Ruta al archivo de tu
 import { render, fireEvent } from '@testing-library/react';
 import Home from '../src/Home.jsx';
 require('dotenv').config(); // Asegúrate de cargar las variables de entorno
-const mongoUri = 'mongodb+srv://Andoni:Alik1525.@cluster-web.feh2j.mongodb.net/?retryWrites=true&w=majority';
 
 beforeAll(async () => {
   // Usamos process.env.MONGO_URI para obtener la URI de MongoDB Atlas
-  //const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/testDB'; // Si no está definida, usa la local por defecto
+  const mongoUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/testDB'; // Si no está definida, usa la local por defecto
   await mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true });
 });
 
