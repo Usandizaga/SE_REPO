@@ -3,26 +3,23 @@ const mongoose = require('mongoose');
 const app = require('../src/index'); // Importa solo la app sin la llamada a `listen`
 
 beforeAll(async () => {
-  const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/ayudaDB'; // Selecciona la URI adecuada
-  // Cierra cualquier conexión activa antes de abrir una nueva
+  // Desconecta cualquier conexión activa antes de abrir una nueva
   if (mongoose.connection.readyState !== 0) {
     await mongoose.disconnect();
   }
 
-  // Conecta a la base de datos
+  const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB';
   await mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  console.log(`Conectado a la base de datos: ${uri}`);
 });
 
 afterAll(async () => {
-  // Verifica si la conexión está activa antes de limpiar la base de datos
+  // Asegúrate de que la conexión está activa antes de intentar limpiar la base de datos
   if (mongoose.connection.readyState !== 0) {
     await mongoose.connection.db.dropDatabase();
     await mongoose.disconnect();
-    console.log('Desconectado de la base de datos');
   }
 });
 

@@ -5,7 +5,12 @@ const Donacion = require('../models/Donacion'); // Importa el modelo si lo neces
 const Formulario = require('../models/Formulario'); // Importa el modelo si lo necesitas
 
 beforeAll(async () => {
-  const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB'; // Fallback para desarrollo
+  // Desconecta cualquier conexión activa antes de abrir una nueva
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.disconnect();
+  }
+
+  const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB';
   await mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -13,11 +18,12 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
-  // Limpiar la base de datos después de las pruebas
-  await mongoose.connection.db.dropDatabase();
-  await mongoose.disconnect();
+  // Asegúrate de que la conexión está activa antes de intentar limpiar la base de datos
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.connection.db.dropDatabase();
+    await mongoose.disconnect();
+  }
 });
-
 describe('POST /api/formulario', () => {
   it('debería guardar un formulario y devolver un mensaje de éxito', async () => {
     const data = {
