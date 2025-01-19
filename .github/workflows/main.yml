@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - developt
+      - develop
   pull_request:
     branches:
       - main
@@ -30,6 +30,8 @@ jobs:
       # Ejecutar pruebas del frontend
       - name: Run frontend tests
         working-directory: Dana_aplication_4/Dana/Client
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}  # Establece la variable de entorno MONGO_URI
         run: npm run test
 
       # Instalar dependencias del backend
@@ -40,4 +42,6 @@ jobs:
       # Ejecutar pruebas del backend
       - name: Run backend tests
         working-directory: Dana_aplication_4/Dana/Server
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}  # Establece la variable de entorno MONGO_URI
         run: npm run test
