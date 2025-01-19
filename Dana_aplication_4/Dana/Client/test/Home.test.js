@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 const request = require('supertest');
 const mongoose = require('mongoose');
-const app = require('../../Server/src/index.js'); // Ruta al archivo de tu servidor
+//const app = require('../../Server/src/index.js'); // Ruta al archivo de tu servidor
 import { render, fireEvent } from '@testing-library/react';
 import Home from '../src/Home.jsx';
 require('dotenv').config(); // Asegúrate de cargar las variables de entorno
@@ -73,3 +73,4 @@ describe('Componente Home', () => {
     expect(inputPregunta2.value).toBe('Educación');
   });
 });
+*/

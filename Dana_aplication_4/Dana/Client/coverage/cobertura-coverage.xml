@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="88" lines-covered="87" line-rate="0.9886" branches-valid="38" branches-covered="38" branch-rate="1" timestamp="1737243726165" complexity="0" version="0.1">
+<coverage lines-valid="88" lines-covered="87" line-rate="0.9886" branches-valid="38" branches-covered="38" branch-rate="1" timestamp="1737302066157" complexity="0" version="0.1">
   <sources>
     <source>C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Client</source>
   </sources>
