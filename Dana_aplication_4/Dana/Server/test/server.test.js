@@ -1,19 +1,30 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
-const app = require('../src/index.js'); // Asegúrate de importar solo la app sin la llamada a `listen`
+const app = require('../src/index.js'); // Importa solo la app sin la llamada a `listen`
+
+// URI para la base de datos de pruebas
+const dbURI = 'mongodb://127.0.0.1:27017/ayudaDB_test';
 
 beforeAll(async () => {
-  // Conectar a una base de datos de prueba
-  await mongoose.connect('mongodb://127.0.0.1:27017/ayudaDB', {
+  // Cierra cualquier conexión activa antes de abrir una nueva
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.disconnect();
+  }
+
+  // Conecta a la base de datos de pruebas
+  await mongoose.connect(dbURI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
   });
+  console.log(`Conectado a la base de datos de pruebas: ${dbURI}`);
 });
 
 afterAll(async () => {
-  // Limpiar la base de datos después de las pruebas
-  await mongoose.connection.db.dropDatabase();
-  await mongoose.disconnect();
+  // Verifica si la conexión está activa antes de limpiar la base de datos
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.connection.db.dropDatabase();
+    await mongoose.disconnect();
+    console.log('Desconectado de la base de datos de pruebas');
+  }
 });
 
 describe('POST /api/formulario', () => {
@@ -21,13 +32,13 @@ describe('POST /api/formulario', () => {
     const data = {
       tipoAyuda: 'alimentos', // Asegúrate de que tipoAyuda no esté vacío
       cantidad: 3, // Asegúrate de que cantidad no esté vacío
-      respuestas: { 
-        '1': 'Comida', 
-        '2': 'Urgente', 
-        '3': '5 personas', 
-        '4': 'No' 
+      respuestas: {
+        '1': 'Comida',
+        '2': 'Urgente',
+        '3': '5 personas',
+        '4': 'No',
       },
-      ubicacion: 'Andoain' // Añadir el campo 'ubicacion' que es obligatorio
+      ubicacion: 'Andoain', // Añadir el campo 'ubicacion' que es obligatorio
     };
 
     // Hacer la petición POST
@@ -44,7 +55,7 @@ describe('POST /api/formulario', () => {
       tipoAyuda: '', // tipoAyuda vacío, debería ser un campo requerido
       cantidad: '', // cantidad vacía, debería ser un campo requerido
       respuestas: {}, // respuestas vacías, puede no ser obligatorio dependiendo del esquema
-      ubicacion: '' // ubicación vacía, debería ser un campo requerido
+      ubicacion: '', // ubicación vacía, debería ser un campo requerido
     };
 
     // Hacer la petición con datos incompletos
