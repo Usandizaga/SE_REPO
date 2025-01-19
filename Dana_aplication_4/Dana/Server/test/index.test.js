@@ -18,7 +18,7 @@ beforeAll(async () => {
 afterAll(async () => {
   // Asegúrate de que la conexión está activa antes de intentar limpiar la base de datos
   if (mongoose.connection.readyState === 1) {
-    await mongoose.connection.db.dropDatabase(); // Limpia la base de datos
+    //await mongoose.connection.db.dropDatabase(); // Limpia la base de datos
     await mongoose.disconnect(); // Desconecta de la base de datos
   }
 });
