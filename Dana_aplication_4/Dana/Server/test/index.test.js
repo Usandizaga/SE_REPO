@@ -5,7 +5,7 @@ const Donacion = require('../models/Donacion'); // Importa el modelo si lo neces
 const Formulario = require('../models/Formulario'); // Importa el modelo si lo necesitas
 
 beforeAll(async () => {
-  const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/tu_base_de_datos'; // Fallback para desarrollo
+  const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB'; // Fallback para desarrollo
   await mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
