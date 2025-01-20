@@ -52,5 +52,6 @@ jobs:
           tar -xf sonar-scanner.zip -C $Env:ProgramFiles
           $Env:PATH += ";$Env:ProgramFiles\sonar-scanner-5.0.1.3006-windows\bin"
 
+          pwd
           cd Dana_aplication_4/Dana/Server
           sonar-scanner
