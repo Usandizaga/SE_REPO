@@ -29,7 +29,7 @@ describe('POST /api/formulario', () => {
       tipoAyuda: 'alimentos',
       cantidad: 3,
       respuestas: {
-        '1': 'Comida',
+        '1': 'Comidita',
         '2': 'Urgente',
         '3': '5 personas',
         '4': 'No',

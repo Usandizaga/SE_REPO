@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="46" lines-covered="41" line-rate="0.8913" branches-valid="10" branches-covered="8" branch-rate="0.8" timestamp="1737321120445" complexity="0" version="0.1">
+<coverage lines-valid="46" lines-covered="41" line-rate="0.8913" branches-valid="10" branches-covered="8" branch-rate="0.8" timestamp="1737384815502" complexity="0" version="0.1">
   <sources>
     <source>C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server</source>
   </sources>
@@ -80,14 +80,14 @@
                 <line number="31" hits="0"/>
               </lines>
             </method>
-            <method name="(anonymous_2)" hits="5" signature="()V">
+            <method name="(anonymous_2)" hits="6" signature="()V">
               <lines>
-                <line number="45" hits="5"/>
+                <line number="45" hits="6"/>
               </lines>
             </method>
-            <method name="(anonymous_3)" hits="2" signature="()V">
+            <method name="(anonymous_3)" hits="3" signature="()V">
               <lines>
-                <line number="70" hits="2"/>
+                <line number="70" hits="3"/>
               </lines>
             </method>
             <method name="(anonymous_4)" hits="0" signature="()V">
@@ -121,25 +121,25 @@
             <line number="34" hits="2" branch="false"/>
             <line number="42" hits="2" branch="false"/>
             <line number="45" hits="2" branch="false"/>
-            <line number="46" hits="5" branch="false"/>
-            <line number="47" hits="5" branch="false"/>
-            <line number="48" hits="5" branch="false"/>
-            <line number="49" hits="5" branch="false"/>
+            <line number="46" hits="6" branch="false"/>
+            <line number="47" hits="6" branch="false"/>
+            <line number="48" hits="6" branch="false"/>
+            <line number="49" hits="6" branch="false"/>
             <line number="50" hits="2" branch="false"/>
-            <line number="52" hits="3" branch="true" condition-coverage="100% (2/2)"/>
-            <line number="53" hits="2" branch="false"/>
+            <line number="52" hits="4" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="53" hits="3" branch="false"/>
             <line number="55" hits="1" branch="false"/>
             <line number="56" hits="1" branch="false"/>
             <line number="60" hits="2" branch="false"/>
             <line number="67" hits="2" branch="false"/>
             <line number="70" hits="2" branch="false"/>
-            <line number="71" hits="2" branch="false"/>
-            <line number="72" hits="2" branch="false"/>
-            <line number="73" hits="2" branch="false"/>
-            <line number="81" hits="2" branch="false"/>
+            <line number="71" hits="3" branch="false"/>
+            <line number="72" hits="3" branch="false"/>
+            <line number="73" hits="3" branch="false"/>
+            <line number="81" hits="3" branch="false"/>
             <line number="82" hits="1" branch="false"/>
-            <line number="84" hits="1" branch="false"/>
-            <line number="85" hits="1" branch="false"/>
+            <line number="84" hits="2" branch="false"/>
+            <line number="85" hits="2" branch="false"/>
             <line number="90" hits="2" branch="false"/>
             <line number="93" hits="2" branch="false"/>
             <line number="94" hits="0" branch="false"/>

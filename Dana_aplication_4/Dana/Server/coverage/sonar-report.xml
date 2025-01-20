@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testExecutions version="1">
-    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server\test\index.test.js">
-        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="496"/>
-        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="10"/>
-        <testCase name="POST /api/formulario debería manejar errores de base de datos" duration="25"/>
-        <testCase name="POST /api/donacion debería guardar una donación correctamente" duration="17"/>
-        <testCase name="POST /api/donacion debería devolver un error 500 si falla al guardar la donación" duration="20"/>
-    </file>
     <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server\test\server.test.js">
-        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="457"/>
-        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="7"/>
+        <testCase name="POST /api/formulario debería guardar un formulario y devolver un mensaje de éxito" duration="542"/>
+        <testCase name="POST /api/formulario debería devolver un error si faltan datos requeridos" duration="6"/>
+    </file>
+    <file path="C:\Users\andon\OneDrive\Desktop\se_repo\Dana_aplication_4\Dana\Server\test\index.test.js">
+        <testCase name="POST /api/formulario debería devolver un error 400 si falta algún dato requerido (backend)" duration="38"/>
+        <testCase name="POST /api/formulario debería devolver un error 400 si cantidad no es un número válido" duration="13"/>
+        <testCase name="POST /api/formulario debería guardar un formulario correctamente si todos los datos son válidos" duration="471"/>
+        <testCase name="POST /api/formulario debería devolver un error 500 si ocurre un fallo inesperado en el servidor" duration="646"/>
+        <testCase name="POST /api/donacion debería guardar una donación correctamente" duration="358"/>
+        <testCase name="POST /api/donacion debería devolver un error 500 si falla al guardar la donación" duration="13"/>
+        <testCase name="POST /api/donacion debería devolver un error 500 si falla al guardar la donación" duration="7"/>
     </file>
 </testExecutions>
