@@ -2,5 +2,5 @@ projectKey=Se_repo2
 serverUrl=http://localhost:9000
 serverVersion=10.7.0.96327
 dashboardUrl=http://localhost:9000/dashboard?id=Se_repo2
-ceTaskId=dea2f57d-56e2-42ce-931e-dff6c8b67d92
-ceTaskUrl=http://localhost:9000/api/ce/task?id=dea2f57d-56e2-42ce-931e-dff6c8b67d92
+ceTaskId=cf8e42b0-9e01-4823-8875-b32daca1d86a
+ceTaskUrl=http://localhost:9000/api/ce/task?id=cf8e42b0-9e01-4823-8875-b32daca1d86a
