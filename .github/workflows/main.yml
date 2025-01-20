@@ -43,6 +43,13 @@ jobs:
         run: npm run test
         continue-on-error: true  # Permitir que el job siga incluso si falla
 
+      # Descargar e instalar SonarScanner
+      - name: Install SonarScanner
+        run: |
+          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
+          Expand-Archive -Path sonar-scanner.zip -DestinationPath $env:USERPROFILE\sonar-scanner
+          $env:PATH += ";$env:USERPROFILE\sonar-scanner\sonar-scanner-5.0.1.3006-windows\bin"
+          
       # Ejecutar SonarQube Scanner
       - name: Run SonarQube Scanner
         working-directory: Dana_aplication_4/Dana/Server
