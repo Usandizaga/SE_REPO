@@ -43,17 +43,26 @@ jobs:
         run: npm run test
         continue-on-error: true  # Permitir que el job siga incluso si falla
 
-      # Descargar e instalar SonarScanner
+        
+      # Instalar sonar-scanner
       - name: Install SonarScanner
         run: |
-          curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
-          Expand-Archive -Path sonar-scanner.zip -DestinationPath $env:USERPROFILE\sonar-scanner
-          $env:PATH += ";$env:USERPROFILE\sonar-scanner\sonar-scanner-5.0.1.3006-windows\bin"
+          # Descargar sonar-scanner
+          Invoke-WebRequest -Uri https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-windows.zip -OutFile sonar-scanner.zip
           
-      # Ejecutar SonarQube Scanner
-      - name: Run SonarQube Scanner
-        working-directory: Dana_aplication_4/Dana/Server
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          # Extraer el archivo zip
+          Expand-Archive -Path sonar-scanner.zip -DestinationPath C:\sonar-scanner
+
+          # Añadir sonar-scanner al PATH
+          $env:PATH = "C:\sonar-scanner\sonar-scanner-cli-4.7.0.2747-windows\bin;" + $env:PATH
+
+      # Verificar si sonar-scanner está disponible
+      - name: Verify sonar-scanner
         run: |
-          sonar-scanner
+          sonar-scanner --version
+
+      # Ejecutar sonar-scanner
+      - name: Run sonar-scanner
+        run: sonar-scanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Asegúrate de tener el token en los secretos
