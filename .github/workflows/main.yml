@@ -4,14 +4,14 @@ on:
   push:
     branches:
       - main
-      - developt
+      - develop
   pull_request:
     branches:
       - main
 
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Usa Windows, pero podrías cambiarlo a ubuntu-latest si prefieres Linux.
 
     steps:
       # Checkout del código
