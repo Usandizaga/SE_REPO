@@ -43,8 +43,8 @@ jobs:
         run: npm run test
         continue-on-error: true  # Permitir que el job siga incluso si falla
 
-        
-      # Instalar sonar-scanner
+
+        # Instalar sonar-scanner
       - name: Install SonarScanner
         run: |
           # Descargar sonar-scanner
@@ -53,16 +53,16 @@ jobs:
           # Extraer el archivo zip
           Expand-Archive -Path sonar-scanner.zip -DestinationPath C:\sonar-scanner
 
-          # Añadir sonar-scanner al PATH
+          # Añadir sonar-scanner al PATH (para PowerShell)
           $env:PATH = "C:\sonar-scanner\sonar-scanner-cli-4.7.0.2747-windows\bin;" + $env:PATH
+          [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, [System.EnvironmentVariableTarget]::Process)
 
       # Verificar si sonar-scanner está disponible
       - name: Verify sonar-scanner
         run: |
+          echo $env:PATH
           sonar-scanner --version
 
       # Ejecutar sonar-scanner
       - name: Run sonar-scanner
-        run: sonar-scanner
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Asegúrate de tener el token en los secretos
+        run: sonar-scanner 
