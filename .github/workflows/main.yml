@@ -58,6 +58,7 @@ jobs:
       # Verificar si sonar-scanner está en el PATH
       - name: Check sonar-scanner version
         run: |
+          echo $env:PATH  # Para imprimir el PATH completo y verificar que contiene la ruta correcta
           sonar-scanner --version
 
       # Ejecutar sonar-scanner
