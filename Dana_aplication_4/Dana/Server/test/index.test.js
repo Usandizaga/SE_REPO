@@ -9,19 +9,22 @@ jest.setTimeout(20000); // 10 segundos
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 beforeAll(async () => {
-  // Desconecta cualquier conexión activa antes de abrir una nueva
-  if (mongoose.connection.readyState !== 0) {
-    await mongoose.disconnect();
-  }
+  try {
+    if (mongoose.connection.readyState !== 0) {
+      await mongoose.disconnect();
+    }
 
- 
- const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB';
-  await mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  //await sleep(60000);
+    const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB';
+    await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Conectado a MongoDB');
+  } catch (error) {
+    console.error('Error al conectar a MongoDB:', error);
+  }
 });
+
 afterAll(async () => {
   // Asegúrate de que la conexión está activa antes de intentar limpiar la base de datos
   if (mongoose.connection.readyState === 1) {
