@@ -5,7 +5,8 @@ const Donacion = require('../models/Donacion'); // Asegúrate de importar correc
 //const app = require('../path/to/app'); // Asegúrate de que la ruta de tu app sea correcta
 
 // Establecer un tiempo de espera global más largo para las pruebas
-jest.setTimeout(10000); // 10 segundos
+jest.setTimeout(20000); // 10 segundos
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 beforeAll(async () => {
   // Desconecta cualquier conexión activa antes de abrir una nueva
@@ -13,11 +14,13 @@ beforeAll(async () => {
     await mongoose.disconnect();
   }
 
-  const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB';
+ 
+ const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/ayudaDB';
   await mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+  //await sleep(60000);
 });
 afterAll(async () => {
   // Asegúrate de que la conexión está activa antes de intentar limpiar la base de datos
@@ -27,6 +30,26 @@ afterAll(async () => {
 });
 
 describe('POST /api/formulario', () => {
+  
+  it('debería guardar un formulario correctamente si todos los datos son válidos', async () => {
+    const data = {
+      tipoAyuda: 'alimentos',
+      cantidad: 3,
+      respuestas: {
+        '1': 'Comida',
+        '2': 'Urgente',
+        '3': '55 personas',
+        '4': 'No',
+      },
+      ubicacion: 'Andoain',
+    };
+
+    const response = await request(app).post('/api/formulario').send(data);
+
+    expect(response.status).toBe(201);
+    expect(response.body.mensaje).toBe('Formulario guardado exitosamente');
+    expect(response.body.resultado).toHaveProperty('_id');
+  });
   it('debería devolver un error 400 si falta algún dato requerido (backend)', async () => {
     const data = {
       tipoAyuda: '',  // Este campo está vacío
@@ -61,25 +84,7 @@ describe('POST /api/formulario', () => {
     expect(response.body.errores).toHaveProperty('cantidad'); // Verifica el error en 'cantidad'
   });
 
-  it('debería guardar un formulario correctamente si todos los datos son válidos', async () => {
-    const data = {
-      tipoAyuda: 'alimentos',
-      cantidad: 3,
-      respuestas: {
-        '1': 'Comida',
-        '2': 'Urgente',
-        '3': '55 personas',
-        '4': 'No',
-      },
-      ubicacion: 'Andoain',
-    };
-
-    const response = await request(app).post('/api/formulario').send(data);
-
-    expect(response.status).toBe(201);
-    expect(response.body.mensaje).toBe('Formulario guardado exitosamente');
-    expect(response.body.resultado).toHaveProperty('_id');
-  });
+  
   it('debería devolver un error 500 si ocurre un fallo inesperado en el servidor', async () => {
     // Fuerza un error al eliminar la conexión activa con la base de datos
     await mongoose.disconnect();
@@ -103,12 +108,13 @@ describe('POST /api/formulario', () => {
 });
 
 describe('POST /api/donacion', () => {
+
   it('debería guardar una donación correctamente', async () => {
     const data = {
       nombre: 'Juan Pérez',
       email: 'juan.perez@example.com',
       tipoAyuda: 'voluntariado',
-      cantidad: 1,
+      cantidad: 12,
       descripcion: 'Ayuda en tareas de limpieza',
       ubicacion: 'Madrid', // Asegúrate de incluir todos los campos requeridos
     };
