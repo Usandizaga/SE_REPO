@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Pipeline 
 
 on:
   push:
@@ -8,35 +8,49 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
   test:
     runs-on: windows-latest
 
     steps:
+      # 1. Checkout del código
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Instalar dependencias del frontend
+      # 2. Instalar dependencias del frontend
       - name: Install frontend dependencies
         working-directory: Dana_aplication_4/Dana/Client
         run: npm ci
 
-      # Ejecutar pruebas del frontend
+      # 3. Ejecutar pruebas del frontend
       - name: Run frontend tests
         working-directory: Dana_aplication_4/Dana/Client
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}  # Establece la variable de entorno MONGO_URI
         run: npm run test
 
-      # Instalar dependencias del backend
+      # 4. Instalar dependencias del backend
       - name: Install backend dependencies
         working-directory: Dana_aplication_4/Dana/Server
         run: npm ci
 
-      # Ejecutar pruebas del backend (Ignorar error si algo falla)
+      # 5. Ejecutar pruebas del backend (Ignorar error si algo falla)
       - name: Run backend tests
         working-directory: Dana_aplication_4/Dana/Server
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: npm run test
-        continue-on-error: true  # Esto permitirá que el job siga incluso si esta parte falla, esto lo hacemos ,ya que, el cluster de mongo va mal
+        continue-on-error: true  # Permitir que el job siga incluso si falla
+
+      # 6. Análisis de SonarQube
+      - name: SonarQube Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Token de SonarQube
+        run:
+          curl -o sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
+          tar -xf sonar-scanner.zip -C $Env:ProgramFiles
+          $Env:PATH += ";$Env:ProgramFiles\sonar-scanner-5.0.1.3006-windows\bin"
+
+          cd Dana_aplication_4/Dana/Server
+          sonar-scanner
