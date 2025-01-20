@@ -43,15 +43,10 @@ jobs:
         run: npm run test
         continue-on-error: true  # Permitir que el job siga incluso si falla
 
-      # 6. Análisis de SonarQube
-      - name: SonarQube Scan
+      # Ejecutar SonarQube Scanner
+      - name: Run SonarQube Scanner
+        working-directory: Dana_aplication_4/Dana/Server
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Token de SonarQube
-        run:
-          curl -o sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
-          tar -xf sonar-scanner.zip -C $Env:ProgramFiles
-          $Env:PATH += ";$Env:ProgramFiles\sonar-scanner-5.0.1.3006-windows\bin"
-
-          pwd
-          cd Dana_aplication_4/Dana/Server
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
           sonar-scanner
