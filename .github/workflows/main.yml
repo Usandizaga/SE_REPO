@@ -38,7 +38,7 @@ jobs:
       - name: Run backend tests
         working-directory: Dana_aplication_4/Dana/Server
         env:
-          MONGO_URI: ${{ secrets.MONGO_URI }}
+          MONGO_URI: ${{secrets.MONGO_URI}}
         run: npm run test
         continue-on-error: true  # Esto permitirá que el job siga incluso si esta parte falla, esto lo hacemos ,ya que, el cluster de mongo va mal
 
@@ -48,6 +48,14 @@ jobs:
           Invoke-WebRequest -Uri "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-windows.zip" -OutFile "C:\sonar-scanner.zip"
           Expand-Archive -Path "C:\sonar-scanner.zip" -DestinationPath "C:\sonar-scanner"
         
+      - name: Verify Sonar Scanner download
+        run: |
+          if (Test-Path "C:\\sonar-scanner.zip") {
+            Write-Host "Sonar Scanner ZIP file downloaded successfully."
+          } else {
+            Write-Error "Sonar Scanner ZIP file not found."
+          }
+
       # Agregar sonar-scanner al PATH
       - name: Add sonar-scanner to PATH
         run: |
