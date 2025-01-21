@@ -42,34 +42,16 @@ jobs:
         run: npm run test
         continue-on-error: true  # Esto permitirá que el job siga incluso si esta parte falla, esto lo hacemos ,ya que, el cluster de mongo va mal
 
-      # Descargar sonar-scanner
-      - name: Download sonar-scanner
+      - name: Download Sonar Scanner
         run: |
-          Invoke-WebRequest -Uri "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-windows.zip" -OutFile "C:\sonar-scanner.zip"
-          Expand-Archive -Path "C:\sonar-scanner.zip" -DestinationPath "C:\sonar-scanner"
-        
-      - name: Verify Sonar Scanner download
-        run: |
-          if (Test-Path "C:\\sonar-scanner.zip") {
-            Write-Host "Sonar Scanner ZIP file downloaded successfully."
-          } else {
-            Write-Error "Sonar Scanner ZIP file not found."
-          }
+          Invoke-WebRequest -Uri "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.7.0.2747-windows.zip" -OutFile "C:\\sonar-scanner.zip"
+          Expand-Archive -Path "C:\\sonar-scanner.zip" -DestinationPath "C:\\sonar-scanner"
 
-      # Agregar sonar-scanner al PATH
-      - name: Add sonar-scanner to PATH
-        run: |
-          echo "C:\sonar-scanner\sonar-scanner-cli-4.7.0.2747-windows\bin" >> $env:USERPROFILE\.bashrc
-          $env:PATH = "C:\sonar-scanner\sonar-scanner-cli-4.7.0.2747-windows\bin;" + $env:PATH
-          [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, [System.EnvironmentVariableTarget]::Process)
+      - name: Add Sonar Scanner to PATH
+        run: echo "C:\\sonar-scanner\\sonar-scanner-4.7.0.2747-windows\\bin" | Out-File -FilePath $env:GITHUB_PATH -Append
 
-      # Verificar si sonar-scanner está en el PATH
-      - name: Check sonar-scanner version
-        run: |
-          echo $env:PATH  # Para imprimir el PATH completo y verificar que contiene la ruta correcta
-          sonar-scanner --version
+      - name: Verify Sonar Scanner installation
+        run: sonar-scanner --version
 
-      # Ejecutar sonar-scanner
-      - name: Run sonar-scanner
-        run: |
-          C:\sonar-scanner\sonar-scanner-cli-4.7.0.2747-windows\bin\sonar-scanner.bat
+      - name: Run Sonar Scanner
+        run: sonar-scanner
